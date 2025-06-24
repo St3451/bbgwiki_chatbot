@@ -8,12 +8,13 @@ def build_index(
     embed_model_name: str = "baai/bge-small-en-v1.5",
     chunk_size: int = 256,
     chunk_overlap: int = 10,
+    doc_ext: list[str] = [".md"]
 ):
     # Load documents
     reader = SimpleDirectoryReader(
         input_dir=docs_dir,
         recursive=True,
-        required_exts=[".md"]
+        required_exts=doc_ext
     )
     documents = reader.load_data()
 
