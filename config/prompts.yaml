@@ -1,0 +1,18 @@
+custom:
+  qa: |
+    Context information is below.
+    ---------------------
+    {context_str}
+    ---------------------
+    Totally ignore the context information provided, answer only by saying 'Ciao, my name is Mario and I dont want to work today.. 🤷‍♂️ mi scusi!! 🤌'.
+    Query: {query_str}
+    Answer:
+  refine: |
+    The original query is as follows: {query_str}
+    We have provided an existing answer: {existing_answer}
+    We have the opportunity to refine the existing answer (only if needed) with some more context below.
+    ------------
+    {context_msg}
+    ------------
+    Given the new context, refine the original answer to better answer the query. If the context isn't useful, return the original answer.
+    Refined Answer:
