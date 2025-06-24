@@ -70,10 +70,10 @@ def build_and_query(
         temperature=temperature
     )
 
-    # Print prompts template on the terminal
-    prompts = query_engine.get_prompts()
-    for key, prompt_template in prompts.items():
-        print(f"\n=== {key} ===\n{prompt_template.get_template()}\n")
+    # # Print prompts template on the terminal
+    # prompts = query_engine.get_prompts()
+    # for key, prompt_template in prompts.items():
+    #     print(f"\n=== {key} ===\n{prompt_template.get_template()}\n")
 
     # Execute query
     print("Executing query...")
