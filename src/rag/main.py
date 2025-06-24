@@ -25,7 +25,7 @@ def retrieve_and_query(
     print("\nInitializing LLM...")
     init_llm(api_key, model, temperature)
 
-    # Build index with context extractor
+    # Build index without context extractor
     print("Building index from documents...")
     index = build_index(docs_dir)
 

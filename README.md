@@ -14,7 +14,7 @@
    cd bbgwiki_chatbot
    ```
 
-3. Create a virtual environment and activate it:
+3. Create and activate virtual environment:
 
    ```bash
    python -m venv .venv

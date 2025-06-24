@@ -28,7 +28,7 @@ def build_index(
         chunk_overlap=chunk_overlap
     )
 
-    # Build the index, only chunk + embed
+    # Build the index
     index = VectorStoreIndex.from_documents(
         documents=documents,
         storage_context=storage_context,
