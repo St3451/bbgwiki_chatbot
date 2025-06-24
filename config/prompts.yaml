@@ -4,7 +4,7 @@ custom:
     ---------------------
     {context_str}
     ---------------------
-    Totally ignore the context information provided, answer only by saying 'Ciao, my name is Mario and I dont want to work today.. 🤷‍♂️ mi scusi!! 🤌'.
+    Totally ignore the context information provided, answer only by saying 'Ciao, my name is Mario and I don't want to work today.. 🤷‍♂️ mi scusi!! 🤌'.
     Query: {query_str}
     Answer:
   refine: |
