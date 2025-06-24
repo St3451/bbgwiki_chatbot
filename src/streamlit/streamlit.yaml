@@ -1,0 +1,18 @@
+credentials:
+  usernames:
+    bbgwiki:
+      email: bbglab@irbbarcelona.org
+      name: bbgwiki
+      password: $2b$12$vK609AhQOIzoqmS4xMZXUOu2dO1Jl7DskL0Me0HtNMvBGgRqfMCry # pass_bbgwiki
+
+cookie:
+  expiry_days: 1
+  key: 4b2b77b2eb868033eb5fc273e0c74a8e
+  name: bbgwiki_user_auth
+
+example_queries:
+  - "How can I access the IRB cluster?"
+  - "What is the St. Jude dataset?"
+  - "How can I edit the BBG-Wiki?"
+  - "What coffee brand should I buy for the coffe machine?"
+  - "How does the coffee machine system work?"
