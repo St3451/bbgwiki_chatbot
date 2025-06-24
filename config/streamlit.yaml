@@ -11,8 +11,9 @@ cookie:
   name: bbgwiki_user_auth
 
 example_queries:
-  - "How can I access the IRB cluster?"
+  - "What is the bbgwiki?"
+  - "How can I edit the bbgwiki?"
   - "What is the St. Jude dataset?"
-  - "How can I edit the BBG-Wiki?"
-  - "What coffee brand should I buy for the coffe machine?"
+  - "Show me the code to compute the type of variant"
   - "How does the coffee machine system work?"
+  - "Show me the code to obtain the correct order of the 96 trinucleotide context"

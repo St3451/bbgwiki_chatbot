@@ -9,12 +9,11 @@ from pathlib import Path
 from core.auth import Authenticator
 from core.sidebar import sidebar
 from core.utils import load_yaml, render_example_queries
-from rag.main import retrieve_and_query
+from rag.main import build_and_query
 
 
 # Init
-STREAMLIT_DIR = os.path.dirname(os.path.abspath(__file__))
-config = load_yaml(f"{STREAMLIT_DIR}/streamlit.yaml")
+config = load_yaml("config/streamlit.yaml")
 
 # Streamlit Page Config
 st.set_page_config(page_title="BBGWiki Chatbot")
@@ -62,18 +61,22 @@ if st.session_state.messages[-1]["role"] != "assistant":
         with st.spinner("Thinking..."):
 
             query = st.session_state.messages[-1]['content']
-            response = retrieve_and_query(
+            response = build_and_query(
                 query, 
                 model=widgets["model"],
                 temperature=widgets["temperature"],
+                prompt_template_mode=widgets["mode"],
                 docs_dir=widgets["docs_dir"],
-                top_k=widgets["num_chunks"]
+                top_k=widgets["num_chunks"],
+                force_rebuild=widgets["force_rebuild"],
+                doc_ext=widgets["doc_ext"]
                 )
             placeholder = st.empty()
             placeholder.markdown(response)
 
+            # Show retrieved context
             for src in response.source_nodes:
-                path = src.node.extra_info["file_path"]
+                path = src.node.metadata["file_path"]
 
                 with st.expander(f"📄 {path}"):
                     text = Path(path).read_text(encoding="utf-8")

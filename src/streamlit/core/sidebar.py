@@ -30,7 +30,7 @@ def sidebar(authenticator: Any) -> str:
 
     # Settings
     st.markdown("---")
-    st.subheader('⚙️ Settings')
+    st.subheader('🧠 Model')
     widgets = {}
 
     widgets["model"] = st.selectbox(
@@ -49,11 +49,28 @@ def sidebar(authenticator: Any) -> str:
         help="Controls randomness of the model: 0.0 (deterministic) → 2.0 (very random)"
     )
 
+    widgets["use_custom"] = st.checkbox(
+        label="Use custom prompt",
+        value=False,
+        help="Check to use your own prompt template in './config/prompts.yaml' instead of the built-in template"
+    )
+    widgets["mode"] = "custom" if widgets["use_custom"] else "compact"
+
+    st.markdown("---")
+    st.subheader('🔍 Context Retrieval')
+
     widgets["docs_dir"] = st.text_input(
         label="Path to your documents",
         value="./bbgwiki/docs/",
         placeholder="e.g. ./bbgwiki/docs/BBGProtocols/",
-        help="Filesystem path where your Markdown files are stored"
+        help="Filesystem path where your files are stored"
+    )
+
+    widgets["doc_ext"] = st.multiselect(
+        label="Document file extensions",
+        options=[".md", ".txt", ".pdf", ".docx"],
+        default=[".md"],
+        help="Only files with these extensions will be loaded into the index"
     )
 
     widgets["num_chunks"] = st.slider(
@@ -63,6 +80,12 @@ def sidebar(authenticator: Any) -> str:
         value=2,        
         step=1,
         help="How many document chunks to retrieve per query for context"
+    )
+
+    widgets["force_rebuild"] = st.checkbox(
+        label="Force rebuild index",
+        value=False,
+        help="If checked, will rebuild and re-persist the vector store on every query"
     )
 
     # Learn More
