@@ -36,7 +36,7 @@
 6. Clone the BBG-Wiki repository:
 
    ```bash
-   git clone git@github.com:bbglab/eduCGI.git
+   git clone git@github.com:bbglab/bbgwiki.git
    ```
 
 ## Usage
@@ -44,7 +44,7 @@
 1. Run the streamlit app:
 
    ```bash
-   streamlit run src/apps/streamlit/streamlit_app.py
+   streamlit run src/streamlit/streamlit_app.py
    ```
 
 2. Copy the local URL provided in the terminal (e.g., <http://localhost:8501>)
@@ -52,5 +52,5 @@ and paste it into your preferred web browser.
 
 3. Log in using the default credentials:
 
-   Username: __bbgwiki_chatbot__  
-   Password: __pass_bbgwiki__ (or whatever password was hashed using `src/streamlit/tools/hash_password.py` and set in `src/streamlit/streamlit.yaml`)
+   Username: __bbgwiki__  
+   Password: __pass_bbgwiki__ (or whatever password was hashed using `src/streamlit/tools/hash_password.py` and set in `config/streamlit.yaml`)
