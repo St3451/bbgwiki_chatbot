@@ -5,7 +5,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:bbglab/eduCGI.git
+   git clone git@github.com:St3451/bbgwiki_chatbot.git
    ```
 
 2. Navigate to the project directory:
