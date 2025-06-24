@@ -1,4 +1,6 @@
-# BBG-Wiki chatbot
+# BBG-Wiki Chatbot
+
+A Streamlit-based RAG (Retrieval-Augmented Generation) chatbot built on top of LlamaIndex and OpenAI. This application allows you to interactively query a collection of documents (e.g., BBG Wiki .md files) with a large language model (LLM), retrieving relevant context from your local document store and generating informed answers.
 
 ## Installation
 
