@@ -77,8 +77,9 @@ if st.session_state.messages[-1]["role"] != "assistant":
             # Show retrieved context
             for src in response.source_nodes:
                 path = src.node.metadata["file_path"]
+                rel_path = os.path.relpath(path)  
 
-                with st.expander(f"📄 {path}"):
+                with st.expander(f"📄 {rel_path}"):
                     text = Path(path).read_text(encoding="utf-8")
                     st.code(text, language="markdown")
 
