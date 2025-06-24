@@ -43,10 +43,10 @@ def sidebar(authenticator: Any) -> str:
     widgets["temperature"] = st.slider(
         label="Temperature",
         min_value=0.0,
-        max_value=2.0,
-        value=1.0,    
+        max_value=1.5,
+        value=0.8,    
         step=0.1,
-        help="Controls randomness of the model: 0.0 (deterministic) → 2.0 (very random)"
+        help="Controls randomness of the model: 0.0 (deterministic) → 1.5 (more random)"
     )
 
     widgets["use_custom"] = st.checkbox(
