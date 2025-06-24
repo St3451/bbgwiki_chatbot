@@ -1,3 +1,6 @@
 /.env
 /.venv
-/.vector_store/
+/vector_store/*
+*.json
+**/__pycache__/
+*.py[cod]
