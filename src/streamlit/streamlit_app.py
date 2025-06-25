@@ -74,14 +74,14 @@ if st.session_state.messages[-1]["role"] != "assistant":
             placeholder = st.empty()
             placeholder.markdown(response)
 
-            # Show retrieved context
+            # Show retrieved contexts
             for src in response.source_nodes:
                 path = src.node.metadata["file_path"]
                 rel_path = os.path.relpath(path)  
 
                 with st.expander(f"📄 {rel_path}"):
-                    text = Path(path).read_text(encoding="utf-8")
-                    st.code(text, language="markdown")
+                    snippet = src.node.get_content()
+                    st.code(snippet, language="text")
 
     st.session_state.messages.append({"role": "assistant", "content": str(response)})
 
