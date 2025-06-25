@@ -46,7 +46,7 @@ def sidebar(authenticator: Any) -> str:
         max_value=1.5,
         value=0.8,    
         step=0.1,
-        help="Controls randomness of the model: 0.0 (deterministic) → 1.5 (more random)"
+        help="Controls randomness of the model: 0 = most predictable, ~0.5 = some flair, ~1.0 = free improv, >1 = wild creativity"
     )
 
     widgets["use_custom"] = st.checkbox(
@@ -77,7 +77,7 @@ def sidebar(authenticator: Any) -> str:
         label="Number of chunks",
         min_value=1,
         max_value=5,
-        value=2,        
+        value=3,        
         step=1,
         help="How many document chunks to retrieve per query for context"
     )
@@ -85,7 +85,7 @@ def sidebar(authenticator: Any) -> str:
     widgets["force_rebuild"] = st.checkbox(
         label="Force rebuild index",
         value=False,
-        help="If checked, will rebuild and re-persist the vector store on every query"
+        help="Check to rebuild and re-persist the vector store on every query"
     )
 
     # Learn More
