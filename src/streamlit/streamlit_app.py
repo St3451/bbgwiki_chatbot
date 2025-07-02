@@ -81,7 +81,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
 
                 with st.expander(f"📄 {rel_path}"):
                     snippet = src.node.get_content()
-                    st.code(snippet, language="text")
+                    st.markdown(snippet)
 
     st.session_state.messages.append({"role": "assistant", "content": str(response)})
 
