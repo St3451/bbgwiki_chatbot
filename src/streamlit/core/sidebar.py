@@ -44,9 +44,9 @@ def sidebar(authenticator: Any) -> str:
         label="Temperature",
         min_value=0.0,
         max_value=1.5,
-        value=0.8,    
+        value=0.2,    
         step=0.1,
-        help="Controls randomness of the model: 0 = most predictable, ~0.5 = some flair, ~1.0 = free improv, >1 = wild creativity"
+        help="Controls randomness of the model: 0 = most predictable, ~0.2 = some flair, ~0.7 = free improv, >0.7 = wild creativity"
     )
 
     widgets["use_custom"] = st.checkbox(
